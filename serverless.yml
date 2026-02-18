@@ -1,0 +1,55 @@
+# "org" ensures this Service is used with the correct Serverless Framework Access Key.
+org: pikku
+# "app" enables Serverless Framework Dashboard features and sharing them with other Services.
+app: lambda
+
+# serverless.yml
+service: test-app
+
+plugins:
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs22.x
+  stage: production
+  region: us-east-1
+  lambdaHashingVersion: 20201221
+  environment:
+    NODE_OPTIONS: --enable-source-maps
+    NODE_ENV: production
+
+functions:
+  http:
+    handler: dist/main.httpRoute
+    events:
+      - http:
+          path: /{proxy+}
+          method: any
+
+  cron:
+    handler: dist/main.myScheduledTask
+    events:
+      - schedule: rate(1 day)
+
+  sqs:
+    handler: dist/main.mySQSWorker
+    events:
+      - sqs:
+          arn:
+            Fn::GetAtt:
+              - PikkuTemplateQueue
+              - Arn
+          batchSize: 10
+          maximumConcurrency: 20
+          maximumBatchingWindow: 60
+          functionResponseType: ReportBatchItemFailures
+
+resources:
+  Resources:
+    PikkuTemplateQueue:
+      Type: AWS::SQS::Queue
+      Properties:
+        QueueName: hello-world-queue
+        # Add other queue properties as needed
+        MessageRetentionPeriod: 1209600
