@@ -1,0 +1,16 @@
+{
+  "listTodos": "listTodos",
+  "getTodo": "getTodo",
+  "createTodo": "createTodo",
+  "updateTodo": "updateTodo",
+  "deleteTodo": "deleteTodo",
+  "completeTodo": "completeTodo",
+  "dailySummary": "dailySummary",
+  "weeklyCleanup": "weeklyCleanup",
+  "onTestEvent": "onTestEvent",
+  "rpcCaller": "rpcCaller",
+  "agentCaller": "agentCaller",
+  "agentStreamCaller": "agentStreamCaller",
+  "agentApproveCaller": "agentApproveCaller",
+  "agentResumeCaller": "agentResumeCaller"
+}
