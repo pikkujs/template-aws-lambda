@@ -1,0 +1,57 @@
+{
+  "agentsMeta": {
+    "todoAssistant": {
+      "name": "todo-assistant",
+      "description": "A helpful assistant that manages todos",
+      "instructions": "",
+      "model": "openai/gpt-4o-mini",
+      "maxSteps": 5,
+      "toolChoice": "auto",
+      "tools": [
+        "listTodos",
+        "createTodo"
+      ],
+      "inputSchema": null,
+      "outputSchema": "TodoAssistantOutput",
+      "workingMemorySchema": null,
+      "channelMiddleware": [
+        {
+          "type": "wire",
+          "name": "appendModified",
+          "inline": false
+        }
+      ],
+      "aiMiddleware": [
+        {
+          "type": "wire",
+          "name": "logAgentIO",
+          "inline": false
+        }
+      ]
+    },
+    "dailyPlanner": {
+      "name": "daily-planner",
+      "description": "Plans your day and suggests tasks based on your schedule",
+      "instructions": "",
+      "model": "openai/gpt-4o-mini",
+      "maxSteps": 3,
+      "inputSchema": null,
+      "outputSchema": null,
+      "workingMemorySchema": null
+    },
+    "mainRouter": {
+      "name": "main-router",
+      "description": "Routes requests to specialized agents",
+      "instructions": "",
+      "model": "openai/gpt-4o-mini",
+      "maxSteps": 5,
+      "agents": [
+        "todoAssistant",
+        "dailyPlanner"
+      ],
+      "inputSchema": null,
+      "outputSchema": null,
+      "workingMemorySchema": null
+    }
+  }
+}

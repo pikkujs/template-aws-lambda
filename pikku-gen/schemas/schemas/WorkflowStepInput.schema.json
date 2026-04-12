@@ -1,0 +1,1 @@
+{"$schema":"http://json-schema.org/draft-07/schema#","type":"object","properties":{"runId":{"type":"string"},"stepName":{"type":"string"},"rpcName":{"type":"string"},"data":{}},"required":["runId","stepName","rpcName","data"],"additionalProperties":false,"description":"Worker input types for generated queue workers","definitions":{}}

@@ -1,0 +1,21 @@
+{
+  "listTodos": "listTodos",
+  "getTodo": "getTodo",
+  "createTodo": "createTodo",
+  "updateTodo": "updateTodo",
+  "deleteTodo": "deleteTodo",
+  "completeTodo": "completeTodo",
+  "dailySummary": "dailySummary",
+  "weeklyCleanup": "weeklyCleanup",
+  "onTestEvent": "onTestEvent",
+  "rpcCaller": "rpcCaller",
+  "workflowCaller": "workflowCaller",
+  "agentCaller": "agentCaller",
+  "agentStreamCaller": "agentStreamCaller",
+  "agentApproveCaller": "agentApproveCaller",
+  "agentResumeCaller": "agentResumeCaller",
+  "pikkuWorkflowWorker": "pikkuWorkflowWorker",
+  "pikkuWorkflowOrchestrator": "pikkuWorkflowOrchestrator",
+  "pikkuWorkflowSleeper": "pikkuWorkflowSleeper",
+  "pikkuRemoteInternalRPC": "pikkuRemoteInternalRPC"
+}

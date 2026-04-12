@@ -1,0 +1,14 @@
+{
+  "pikku-workflow-step-worker": {
+    "pikkuFuncId": "pikkuWorkflowWorker",
+    "name": "pikku-workflow-step-worker"
+  },
+  "pikku-workflow-orchestrator": {
+    "pikkuFuncId": "pikkuWorkflowOrchestrator",
+    "name": "pikku-workflow-orchestrator"
+  },
+  "pikku-remote-internal-rpc": {
+    "pikkuFuncId": "pikkuRemoteInternalRPC",
+    "name": "pikku-remote-internal-rpc"
+  }
+}
